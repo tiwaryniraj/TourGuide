@@ -32,13 +32,13 @@ public class HotelFragment extends Fragment {
 
         /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
         final ArrayList<Place> places = new ArrayList<>();
-        places.add(new Place("Fortune Inn Promenade","Near Akota Gardens.","0265 230 7000",R.drawable.hotel1));
-        places.add(new Place("Best Western Hotel","Behind Alkapuri Petrol Pump","0265 234 0050",R.drawable.hotel2));
-        places.add(new Place("GenX Vadodara","7, Jetalpur Rd, Sampatrao Colony, Alkapuri","0265 230 7000",R.drawable.hotel3));
-        places.add(new Place("Eastin Residences","78, RC Dutt Road, Sampatrao Colony, Alkapuri","0265 230 7000",R.drawable.hotel4));
-        places.add(new Place("The Gateway","Akota Gardens, Near Gold Gym, Productivity Road","0265 230 7000",R.drawable.hotel5));
-        places.add(new Place("The Fern","Near Urmi Char Rasta, Off, Dinesh Mill Rd","0265 230 7000",R.drawable.hotel6));
-        places.add(new Place("WelcomHotel","RC Dutt Rd, Alkapuri","0265 230 7000",R.drawable.hotel7));
+        places.add(new Place(getString(R.string.hotel1nmae),getString(R.string.hotel1Add),"0265 230 7000",R.drawable.hotel1));
+        places.add(new Place(getString(R.string.hotel2name),getString(R.string.hotel2Add),"0265 234 0050",R.drawable.hotel2));
+        places.add(new Place(getString(R.string.hotel3name),getString(R.string.hotel3Add),"0265 230 7000",R.drawable.hotel3));
+        places.add(new Place(getString(R.string.hotel4name),getString(R.string.hotel4Add),"0265 230 7000",R.drawable.hotel4));
+        places.add(new Place(getString(R.string.hotel5name),getString(R.string.hotel5Add),"0265 230 7000",R.drawable.hotel5));
+        places.add(new Place(getString(R.string.hotel6name),getString(R.string.hotel6Add),"0265 230 7000",R.drawable.hotel6));
+        places.add(new Place(getString(R.string.hotel7name),getString(R.string.hotel7Add),"0265 230 7000",R.drawable.hotel7));
 
         PlaceAdapter adapter = new PlaceAdapter(getActivity(),places);
 
@@ -50,7 +50,7 @@ public class HotelFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Place place = places.get(position);
-                String url = "http://maps.google.com/maps?daddr="+place.getPlaceName()+ " " + place.getPlaceAddress() ;
+                String url = getString(R.string.mapUrl)+place.getPlaceName()+ " " + place.getPlaceAddress() ;
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(i);
             }

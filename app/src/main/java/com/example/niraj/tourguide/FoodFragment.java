@@ -31,13 +31,13 @@ public class FoodFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.place_list, container, false);
 
         final ArrayList<Place> places = new ArrayList<>();
-        places.add(new Place("Tasty Vadapav","Opp. Ghelani Petrol Pump, Nizampura","0265 230 7000",R.drawable.food1));
-        places.add(new Place("Sasumaa Gujarati Thali","GF 1/2, Gokulesh Complex, R C Dutt Road","0265 230 7000",R.drawable.food2));
-        places.add(new Place("Fiorella Italian Restaurant","Aradhana Society, Alkapuri","0265 230 7000",R.drawable.food3));
-        places.add(new Place("Peshawri Restaurant","Hotel Vadodara, Ground Floor, RC Dutt Road","0265 230 7000",R.drawable.food4));
-        places.add(new Place("Little Italy","Shop No. 10,11,12 & 13, Arun Complex, 36 Alkapuri Society","0265 230 7000",R.drawable.food8));
-        places.add(new Place("Mainland China","Bella Vista Complex, Above Shivsagar Restaurant","0265 230 7000",R.drawable.food6));
-        places.add(new Place("Lazeez","Vishal Chambers, 34, RC Dutt Rd","0265 230 7000",R.drawable.food7));
+        places.add(new Place(getString(R.string.foodName1),getString(R.string.foodAdd1),"0265 230 7000",R.drawable.food1));
+        places.add(new Place(getString(R.string.foodName2),getString(R.string.foodAdd2),"0265 230 7000",R.drawable.food2));
+        places.add(new Place(getString(R.string.foodName3),getString(R.string.foodAdd3),"0265 230 7000",R.drawable.food3));
+        places.add(new Place(getString(R.string.foodName4),getString(R.string.foodAdd4),"0265 230 7000",R.drawable.food4));
+        places.add(new Place(getString(R.string.foodName5),getString(R.string.foodAdd5),"0265 230 7000",R.drawable.food8));
+        places.add(new Place(getString(R.string.foodName6),getString(R.string.foodAdd6),"0265 230 7000",R.drawable.food6));
+        places.add(new Place(getString(R.string.foodName7),getString(R.string.foodAdd7),"0265 230 7000",R.drawable.food7));
 
         PlaceAdapter adapter = new PlaceAdapter(getActivity(),places);
 
@@ -49,7 +49,7 @@ public class FoodFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Place place = places.get(position);
-                String url = "http://maps.google.com/maps?daddr="+place.getPlaceName()+ " " + place.getPlaceAddress() ;
+                String url = getString(R.string.mapUrl)+place.getPlaceName()+ " " + place.getPlaceAddress() ;
                 Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(i);
             }
