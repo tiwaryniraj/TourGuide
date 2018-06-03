@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textAddress">14sp</dimen>
+    <dimen name="dimImage">88dp</dimen>
+</resources>

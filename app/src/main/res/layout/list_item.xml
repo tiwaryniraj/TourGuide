@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="@dimen/dimImage"
+        android:layout_height="@dimen/dimImage"
+        android:id="@+id/imageView"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:id="@+id/text_container"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:id="@+id/name_text_view"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/black"
+            tools:text = "name"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="top"
+            android:id="@+id/address_text_view"
+            android:textSize="@dimen/textAddress"
+            android:textColor="@android:color/black"
+            tools:text = "address"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:id="@+id/contact_text_view"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/black"
+            tools:text = "contact"/>
+    </LinearLayout>
+
+</LinearLayout>
